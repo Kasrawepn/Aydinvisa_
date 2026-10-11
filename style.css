@@ -1,0 +1,140 @@
+/*
+Theme Name: Aydın Transport & Logistik
+Theme URI: https://aydinvisa.de
+Author: Aydın Transport & Logistik
+Description: Die Website von Aydın Transport & Logistik als WordPress-Theme. Startseite und die fünf Unterseiten werden von den Templates gerendert; Gestaltung, Farben und die dreisprachige Ebene (DE/EN/TR) kommen aus den eigenen CSS- und JS-Dateien im Ordner assets/. Kein Page-Builder, keine Blöcke — dieselbe Optik wie auf der statischen Seite.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: proprietary
+Text Domain: aydin
+*/
+
+/* Die Gestaltung selbst liegt in assets/css/base.css, components.css und
+   pages.css und wird in dieser Reihenfolge von functions.php geladen. Diese
+   Datei enthält nur den Theme-Kopf und die Ergänzungen für WordPress. */
+
+/* Kontaktseite: WhatsApp ist der Hauptkanal, deshalb der grüne Button. */
+.btn--whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.btn--whatsapp:hover {
+  background: #1fbe5b;
+  color: #fff;
+}
+
+.contact-cta {
+  display: grid;
+  gap: 1.35rem;
+  justify-items: start;
+}
+
+.contact-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-cta .btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Fallback-Template (index.php): Inhalt unterhalb des festen Headers. */
+.fallback-page {
+  padding-top: calc(var(--header-h) + 4rem);
+}
+
+/* Galerie */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item__btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: #0a1a2f;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item__btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item__btn:hover img,
+.gallery-item__btn:focus-visible img {
+  transform: scale(1.05);
+}
+
+.gallery-item__btn figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem 1rem 0.8rem;
+  text-align: left;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(transparent, rgba(10, 26, 47, 0.85));
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(10, 26, 47, 0.92);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+/* Visa-Seite: Hinweis */
+.visa-note {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
